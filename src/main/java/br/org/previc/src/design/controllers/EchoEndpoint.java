@@ -29,7 +29,7 @@ public class EchoEndpoint {
 		   AtividadeSignificativa.setIdAtividadeSignificativa(1);
 		   AtividadeSignificativa.setNome("Nome Atividade Significativa");		   
 		   
-		   responseJson.setMensagensRetorno("Teste Fabio!!");
+		   responseJson.setMensagensRetorno("Atividdade Significativa consultada!!!");
 		   responseJson.setModeloRetorno(AtividadeSignificativa);
 		   
 		   
@@ -38,7 +38,7 @@ public class EchoEndpoint {
 	       StringBuilder result = new StringBuilder();
 	       result.append("Teste de API");
 	       
-	       return Response.status(200).entity(responseJson.getModeloRetorno()).build();
+	       return Response.status(200).entity(responseJson).build();
 	   }
 	
 	
