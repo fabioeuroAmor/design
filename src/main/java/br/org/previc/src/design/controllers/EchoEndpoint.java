@@ -1,6 +1,10 @@
 package br.org.previc.src.design.controllers;
 
 import org.springframework.stereotype.Component;
+
+import br.org.previc.src.design.domains.AtividadeSignificativa;
+import br.org.previc.src.design.json.ResponseJson;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -18,10 +22,23 @@ public class EchoEndpoint {
 	   @Path("/teste")
 	   @Produces("application/json")
 	   public Response getteste() {
+		   
+		   ResponseJson responseJson = new ResponseJson();	
+		   
+		   AtividadeSignificativa AtividadeSignificativa = new AtividadeSignificativa();
+		   AtividadeSignificativa.setIdAtividadeSignificativa(1);
+		   AtividadeSignificativa.setNome("Nome Atividade Significativa");		   
+		   
+		   responseJson.setMensagensRetorno("Teste Fabio!!");
+		   responseJson.setModeloRetorno(AtividadeSignificativa);
+		   
+		   
+		
+		   
 	       StringBuilder result = new StringBuilder();
 	       result.append("Teste de API");
 	       
-	       return Response.status(200).entity(result.toString()).build();
+	       return Response.status(200).entity(responseJson.getModeloRetorno()).build();
 	   }
 	
 	
