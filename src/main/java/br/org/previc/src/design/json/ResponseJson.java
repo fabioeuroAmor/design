@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author Kamy Ponce
  *
  */
-public class Response implements Serializable {
+public class ResponseJson implements Serializable {
 	
 
 	private static final long serialVersionUID = 1L;
